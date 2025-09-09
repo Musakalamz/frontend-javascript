@@ -1,4 +1,3 @@
-// 1. Define the Student interface
 interface Student {
   firstName: string;
   lastName: string;
@@ -6,36 +5,33 @@ interface Student {
   location: string;
 }
 
-// 2. Create two students
-const student1: Student = {
+const studentA: Student = {
   firstName: "Marzouqoh",
   lastName: "Musa",
-  age: 22,
-  location: "Lagos",
+  age: 25,
+  location: "Lagos, Nigeria",
 };
 
-const student2: Student = {
+const studentB: Student = {
   firstName: "Mukhlisoh",
-  lastName: "Nusa",
+  lastName: "Musa",
   age: 20,
-  location: "Abuja",
+  location: "Abeokuta, Nigeria",
 };
 
-// 3. Create an array of students
-const studentsList: Student[] = [student1, student2];
+const studentsList: Array<Student> = [studentA, studentB];
 
-// 4. Render table in the DOM
-const table: HTMLTableElement = document.createElement("table");
+const table = document.createElement("table");
 table.border = "1";
 
-// Add table header
 const headerRow = table.insertRow();
+
 const headerCell1 = headerRow.insertCell();
 headerCell1.textContent = "First Name";
+
 const headerCell2 = headerRow.insertCell();
 headerCell2.textContent = "Location";
 
-// Add rows for each student
 studentsList.forEach((student) => {
   const row = table.insertRow();
   const firstNameCell = row.insertCell();
@@ -45,5 +41,4 @@ studentsList.forEach((student) => {
   locationCell.textContent = student.location;
 });
 
-// Append table to the document body
 document.body.appendChild(table);
