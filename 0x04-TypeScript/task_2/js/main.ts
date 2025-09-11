@@ -51,7 +51,7 @@ export function isDirector(employee: Director | Teacher) {
 
 export function executeWork(employee: Director | Teacher) {
   if (isDirector(employee)) {
-    return (employee as Director).workDirectorTasks();
+    return employee.workDirectorTasks();
   }
-  return (employee as Teacher).workTeacherTasks();
+  return employee.workTeacherTasks();
 }
